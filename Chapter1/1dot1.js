@@ -1,12 +1,13 @@
+uniqueChars("ABCDEFGG");
 function uniqueChars(word) {
-    var boolArray = new Array(256, false);
-    var value;
+    var boolArray = new Array();
+    var currentLetter;
     for (var i = 0; i < word.length; i++) {
-        value = word.charAt(i);
-        if (boolArray[value]) {
-            return false;
+        currentLetter = word.charAt(i);
+        if (boolArray[currentLetter]) {
+            return false;//break out of loop when character exists in array
         }
-        boolArray[value] = true;
+        boolArray[currentLetter] = true;
     }
     return true;
 };
